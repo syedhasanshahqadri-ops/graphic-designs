@@ -3,277 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>My Graphic Designing Work</title>
-
+    <script>(function(){var d=document.documentElement,t,a;try{t=localStorage.getItem("theme");a=localStorage.getItem("accent")}catch(e){}if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";d.dataset.theme=t;d.dataset.accent=a||"purple"})()</script>
     <link rel="stylesheet" href="style.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-    <!-- Navigation -->
-
+    <!-- Navigation (side rail on desktop) -->
     <nav class="navbar">
-
-        <a href="#home" class="logo">
-            My<span>Designs</span>
-        </a>
-
+        <a href="#home" class="logo">My<span>Designs</span></a>
         <div class="nav-links">
             <a href="#home">Home</a>
             <a href="#work">Work</a>
             <a href="#about">About</a>
         </div>
-
+        <button class="theme-btn" id="themeBtn" aria-label="Switch dark / light mode"><span class="sun">☀</span><span class="moon">☾</span></button>
     </nav>
 
-
     <!-- Hero -->
-
     <section class="hero" id="home">
-
         <div class="hero-content">
-
             <p class="eyebrow">GRAPHIC DESIGN</p>
-
-            <h1>
-                My Graphic
-                <br>
-                <span>Designing</span> Work
-            </h1>
-
-            <p class="intro">
-                A collection of creative work, experiments and visual
-                ideas. Exploring different styles, colors, typography
-                and concepts through graphic design.
-            </p>
-
-            <a href="#work" class="view-button">
-                Explore Work
-                <span>↓</span>
-            </a>
-
+            <h1>My Graphic<br><span class="hl">Designing</span> Work</h1>
+            <p class="intro">A collection of creative work, experiments and visual ideas. Exploring different styles, colors, typography and concepts through graphic design.</p>
+            <div class="hero-actions">
+                <a href="#work" class="view-button">Explore Work <span>↓</span></a>
+                <div class="swatches" role="group" aria-label="Pick an accent colour">
+                    <small>Accent</small>
+                    <button data-accent="purple" aria-label="Purple"></button>
+                    <button data-accent="rose" aria-label="Rose"></button>
+                    <button data-accent="teal" aria-label="Teal"></button>
+                    <button data-accent="blue" aria-label="Blue"></button>
+                </div>
+            </div>
         </div>
 
+        <!-- 3D poster stack -->
+        <div class="stack-scene" aria-hidden="true">
+            <div class="stack">
+                <div class="stack-card sc3"><img src="images/image3.png" alt="" onerror="this.remove()"></div>
+                <div class="stack-card sc2"><img src="images/image2.png" alt="" onerror="this.remove()"></div>
+                <div class="stack-card sc1"><img src="images/image1.png" alt="" onerror="this.remove()"></div>
+                <div class="stack-badge"><b id="designCount">10</b> Designs</div>
+            </div>
+        </div>
 
         <!-- Decorative shapes -->
-
-        <div class="circle circle-one"></div>
-        <div class="circle circle-two"></div>
-        <div class="small-dot"></div>
-
+        <div class="circle circle-one" data-depth="30"></div>
+        <div class="circle circle-two" data-depth="-24"></div>
+        <div class="small-dot" data-depth="46"></div>
+        <div class="cube3d" data-depth="38"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="ring3d" data-depth="-34"></div>
     </section>
-
 
     <!-- Work -->
-
     <section class="work" id="work">
-
         <div class="section-top">
-
             <div>
                 <p class="eyebrow">SELECTED WORK</p>
-
-                <h2>
-                    Creative <span>Experiments</span>
-                </h2>
+                <h2>Creative <span>Experiments</span></h2>
             </div>
-
-            <p class="work-description">
-                Different ideas, styles and visual explorations.
-            </p>
-
+            <p class="work-description">Different ideas, styles and visual explorations.</p>
         </div>
 
+        <div class="gallery-tools">
+            <button class="active" data-view="masonry">▥ Masonry</button>
+            <button data-view="grid">▦ Grid</button>
+            <span>Click any design to open the viewer</span>
+        </div>
 
-        <!-- Masonry Gallery -->
-
+        <!-- Gallery -->
         <div class="gallery">
-
-            <a href="images/image1.png"
-               target="_blank"
-               class="design-card">
-
-                <img src="images/image1.png"
-                     alt="Graphic design work 1">
-
+            <a href="images/image1.png" target="_blank" class="design-card">
+                <img src="images/image1.png" alt="Graphic design work 1">
                 <div class="number">01</div>
-
+                <span class="view-tag">View ⤢</span>
+                <div class="glare"></div>
             </a>
 
-
-            <a href="images/image2.png"
-               target="_blank"
-               class="design-card">
-
-                <img src="images/image2.png"
-                     alt="Graphic design work 2">
-
+            <a href="images/image2.png" target="_blank" class="design-card">
+                <img src="images/image2.png" alt="Graphic design work 2">
                 <div class="number">02</div>
-
+                <span class="view-tag">View ⤢</span>
+                <div class="glare"></div>
             </a>
 
-
-            <a href="images/image3.png"
-               target="_blank"
-               class="design-card">
-
-                <img src="images/image3.png"
-                     alt="Graphic design work 3">
-
+            <a href="images/image3.png" target="_blank" class="design-card">
+                <img src="images/image3.png" alt="Graphic design work 3">
                 <div class="number">03</div>
-
+                <span class="view-tag">View ⤢</span>
+                <div class="glare"></div>
             </a>
 
-
-            <a href="images/image4.png"
-               target="_blank"
-               class="design-card">
-
-                <img src="images/image4.png"
-                     alt="Graphic design work 4">
-
+            <a href="images/image4.png" target="_blank" class="design-card">
+                <img src="images/image4.png" alt="Graphic design work 4">
                 <div class="number">04</div>
-
+                <span class="view-tag">View ⤢</span>
+                <div class="glare"></div>
             </a>
 
-
-            <a href="images/image5.png"
-               target="_blank"
-               class="design-card">
-
-                <img src="images/image5.png"
-                     alt="Graphic design work 5">
-
+            <a href="images/image5.png" target="_blank" class="design-card">
+                <img src="images/image5.png" alt="Graphic design work 5">
                 <div class="number">05</div>
-
+                <span class="view-tag">View ⤢</span>
+                <div class="glare"></div>
             </a>
 
-
-            <a href="images/image6.png"
-               target="_blank"
-               class="design-card">
-
-                <img src="images/image6.png"
-                     alt="Graphic design work 6">
-
+            <a href="images/image6.png" target="_blank" class="design-card">
+                <img src="images/image6.png" alt="Graphic design work 6">
                 <div class="number">06</div>
-
+                <span class="view-tag">View ⤢</span>
+                <div class="glare"></div>
             </a>
 
-
-            <a href="images/image7.png"
-               target="_blank"
-               class="design-card">
-
-                <img src="images/image7.png"
-                     alt="Graphic design work 7">
-
+            <a href="images/image7.png" target="_blank" class="design-card">
+                <img src="images/image7.png" alt="Graphic design work 7">
                 <div class="number">07</div>
-
+                <span class="view-tag">View ⤢</span>
+                <div class="glare"></div>
             </a>
 
-
-            <a href="images/image8.png"
-               target="_blank"
-               class="design-card">
-
-                <img src="images/image8.png"
-                     alt="Graphic design work 8">
-
+            <a href="images/image8.png" target="_blank" class="design-card">
+                <img src="images/image8.png" alt="Graphic design work 8">
                 <div class="number">08</div>
-
+                <span class="view-tag">View ⤢</span>
+                <div class="glare"></div>
             </a>
 
-
-            <a href="images/image9.png"
-               target="_blank"
-               class="design-card">
-
-                <img src="images/image9.png"
-                     alt="Graphic design work 9">
-
+            <a href="images/image9.png" target="_blank" class="design-card">
+                <img src="images/image9.png" alt="Graphic design work 9">
                 <div class="number">09</div>
-
+                <span class="view-tag">View ⤢</span>
+                <div class="glare"></div>
             </a>
 
-
-            <a href="images/image10.png"
-               target="_blank"
-               class="design-card">
-
-                <img src="images/image10.png"
-                     alt="Graphic design work 10">
-
+            <a href="images/image10.png" target="_blank" class="design-card">
+                <img src="images/image10.png" alt="Graphic design work 10">
                 <div class="number">10</div>
-
+                <span class="view-tag">View ⤢</span>
+                <div class="glare"></div>
             </a>
 
         </div>
-
     </section>
-
 
     <!-- About -->
-
     <section class="about" id="about">
-
+        <div class="cube3d big" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
         <div class="about-content">
-
-            <div class="about-number">
-                01
-            </div>
-
+            <div class="about-number">01</div>
             <div class="about-text">
-
                 <p class="eyebrow">A LITTLE ABOUT ME</p>
-
-                <h2>
-                    Designing ideas into
-                    <span>visual experiences.</span>
-                </h2>
-
-                <p>
-                    I'm a graphic designer interested in creating
-                    clean, modern and memorable visuals. I enjoy
-                    experimenting with typography, layouts, colors
-                    and different visual styles.
-                </p>
-
+                <h2>Designing ideas into <span>visual experiences.</span></h2>
+                <p>I'm a graphic designer interested in creating clean, modern and memorable visuals. I enjoy experimenting with typography, layouts, colors and different visual styles.</p>
+                <div class="skills"><span>Typography</span><span>Layouts</span><span>Colors</span><span>Visual Styles</span></div>
             </div>
-
         </div>
-
     </section>
 
-
     <!-- Footer -->
-
     <footer>
-
-        <div class="footer-logo">
-            My<span>Designs</span>
-        </div>
-
-        <p>
-            More creative work coming soon.
-        </p>
-
+        <div class="footer-logo">My<span>Designs</span></div>
+        <p>More creative work coming soon.</p>
         <div class="footer-line"></div>
-
-        <small>
-            © 2026 My Graphic Designing Work
-        </small>
-
+        <small>© 2026 My Graphic Designing Work</small>
     </footer>
 
+    <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+    <!-- Lightbox viewer -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="lb-close" aria-label="Close">✕</button>
+        <button class="lb-prev" aria-label="Previous">‹</button>
+        <figure class="lb-stage"><img id="lbImg" alt=""></figure>
+        <button class="lb-next" aria-label="Next">›</button>
+        <div class="lb-bar">
+            <span id="lbCount">01 / 10</span>
+            <a id="lbOpen" href="#" target="_blank" rel="noopener">Open original ↗</a>
+            <a id="lbDl" href="#" download>Download ⤓</a>
+        </div>
+    </div>
 
     <script src="script.js"></script>
-
 </body>
 </html>
